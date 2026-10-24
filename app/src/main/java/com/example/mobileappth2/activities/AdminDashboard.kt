@@ -114,9 +114,6 @@ fun AdminDashboard(
     }
 }
 
-// ==========================================
-// TAB 1: EMPLOYEE MANAGEMENT
-// ==========================================
 @Composable
 fun EmployeeManagementTab(dbHelper: DBHelper) {
     val context = LocalContext.current
@@ -197,7 +194,6 @@ fun EmployeeManagementTab(dbHelper: DBHelper) {
             }
         }
 
-        // Add/Edit Dialog
         if (showAddDialog || employeeToEdit != null) {
             AddEditEmployeeDialog(
                 employeeToEdit = employeeToEdit,
@@ -229,7 +225,6 @@ fun EmployeeManagementTab(dbHelper: DBHelper) {
             )
         }
 
-        // Delete Confirm Dialog
         if (employeeToDelete != null) {
             AlertDialog(
                 onDismissRequest = { employeeToDelete = null },
@@ -451,9 +446,6 @@ fun AddEditEmployeeDialog(
     )
 }
 
-// ==========================================
-// TAB 2: SALARY MANAGEMENT
-// ==========================================
 @Composable
 fun SalaryManagementTab(dbHelper: DBHelper) {
     val context = LocalContext.current
@@ -594,9 +586,6 @@ fun SalaryManagementTab(dbHelper: DBHelper) {
     }
 }
 
-// ==========================================
-// TAB 3: ATTENDANCE HISTORY TAB
-// ==========================================
 @Composable
 fun AttendanceHistoryTab(dbHelper: DBHelper) {
     var logsList by remember { mutableStateOf<List<Pair<WorkLog, Employee>>>(emptyList()) }
